@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hệ Thống Hỗ Trợ Cơ Chế Một Của Dành Cho Cán Bọ</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
+    <link rel="stylesheet" href="assets/css/Data-Table-1.css">
+    <link rel="stylesheet" href="assets/css/Data-Table.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid" data-aos="fade" data-aos-duration="500" style="padding: 0px;">
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean header-canbo">
+            <div class="container"><a class="navbar-brand font_hunre" href="#" color="font_hunre"
+                    style=" font-size: 1.5vw;"><img src="assets/img/480px-HUNRE_Logo.png" style="width: 50px;" /> Hệ
+                    Thống Hỗ Trợ Quản Lý Cơ Chế Một Cửa </a><button data-toggle="collapse" class="navbar-toggler"
+                    data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ml-auto info-user">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row main-canbo" style="background: rgba(108,117,125,0.06);min-height: 750px;margin: 0px;">
+
+        </div>
+        <div class="row" style="color: #6DBC2F;background: #6DBC2F;border-color: #6DBC2F;margin: 0px;">
+            <div class="col col-12" style="height: 100%;padding: 0px;color: #6DBC2F;">
+                <div class="d-xl-flex justify-content-xl-center align-items-xl-end"
+                    style="height: 50%;background: #6DBC2F;">
+                    <h5 class="d-xl-flex align-items-xl-end" style="color: var(--light);"><br><strong>ĐẠI HỌC TÀI NGUYÊN
+                            VÀ MÔI TRƯỜNG HÀ NỘI</strong><br><br></h5>
+                </div>
+                <div class="row" style="margin: 0px;height: 50%;">
+                    <div class="col d-xl-flex justify-content-xl-center" style="padding: 0px;height: 100%;">
+                        <p style="margin: 0px;color: var(--white);height: 100%;"><br>Địa chỉ: Số 41A đường Phú Diễn, Q.
+                            Bắc Từ Liêm, TP. Hà Nội<br>Điện thoại: 0902 130 130&nbsp;|&nbsp;Email:&nbsp;<a
+                                href="mailto:DHTNMT@hunre.edu.vn">DHTNMT@hunre.edu.vn</a><br><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div role="dialog" tabindex="-1" class="modal fade show" id="form-change-password" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Thông tin người dùng</h4><button type="button" class="close" data-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+    
+              </iframe>
+              <div class="form-group">
+                <label for="email">Mã người dùng:</label>
+                <input type="text" class="form-control" id="email" readonly>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Tên người dùng:</label>
+                <input type="tel" class="form-control" id="pwd" readonly>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Email:</label>
+                <input type="email" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Mật khẩu mới:</label>
+                <input type="password" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Xác nhận mật khẩu mới:</label>
+                <input type="password" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Mật khẩu cũ:</label>
+                <input type="password" class="form-control" id="pwd">
+              </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary back_hunre" type="button">Cập nhật</button><button
+                class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="toast" data-autohide="false" style="z-index: 100;position:absolute;right:0;bottom: 0;">
+        <div class="toast-header">
+          <strong class="mr-auto text-primary">Thông báo </strong>
+          <small class="text-muted"></small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+          Gửi yêu cầu thành công! Kiểm tra mail của bạn.
+        </div>
+      </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/Bootstrap-DataTables-1.js"></script>
+    <script src="assets/js/Bootstrap-DataTables.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+    <script src="http://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+    <script src="./assets/js/canbo/component.js"></script>
+    <script src="./assets/js/canbo/view.js"></script>
+    <script src="./assets/js/canbo/controller.js"></script>
+    <script src="./assets/js/index.js"></script>
+
+
+</body>
+
+</html>

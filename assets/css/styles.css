@@ -1,0 +1,45 @@
+.btn-header {
+  margin: 5px;
+}
+
+.font_hunre {
+  color: #6DBC2F !important;
+}
+
+.back_hunre {
+  background-color: #6DBC2F;
+}
+
+.item-menu {
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.item-menu:hover {
+  background-color: #6cbc2f30;
+  transition: all 0.5s;
+}
+
+.active-item-menu {
+  background-color: #6DBC2F;
+  box-shadow: 1px 1px 1px rgba(253,126,20,0.42);
+  animation-name: activeitem;
+  animation-duration: 0.5s;
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.090);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+@keyframes activeitem {
+  0% {
+    background-color: #ffffff00;
+  }
+  100% {
+    background-color: #6DBC2F;
+  }
+}
+

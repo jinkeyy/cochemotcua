@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Hệ Thống Hỗ Trợ Cơ Chế Một Của Dành Cho Học Sinh</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
+  <link rel="stylesheet" href="assets/css/Data-Table-1.css">
+  <link rel="stylesheet" href="assets/css/Data-Table.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+  <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+  <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+  <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <div class="container-fluid" data-aos="fade" data-aos-duration="500" style="height: 100vh;padding: 0px;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean header-student">
+      <div class="container"><a class="navbar-brand font_hunre" href="" color="font_hunre"><img
+            src="assets/img/480px-HUNRE_Logo.png" style="width: 50px;"  style=" font-size: 1.5vw;" /> Hệ Thống Hỗ Trợ Quản Lý Cơ Chế Một Cửa
+        </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+            navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><button class="btn btn-primary btn-send-form btn-header " type="button">Gửi Biểu
+                Mẫu</button></li>
+            <li class="nav-item"><button class="btn btn-primary btn-login btn-header " type="button" data-toggle="modal"
+                data-target="#form-login">Đăng Nhập</button></li>
+            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                data-toggle="dropdown" href="#">Tài Khoản </a>
+              <div class="dropdown-menu"><a class="dropdown-item" href="#">Thông tin tài khoản</a><a data-toggle="modal"
+                  data-target="#form-change-password" class="dropdown-item" href="#">Đổi mật khẩu</a><a
+                  class="dropdown-item" href="#">Đăng Xuất</a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row main" style="margin: 0px;background: rgba(108,117,125,0.06); min-height: 750px;">
+      <!-- <div class="col-xl-2" data-aos="fade-right" style="padding: 0px;">
+        <div>
+          <div>
+            <div class="d-xl-flex justify-content-xl-center align-items-xl-end"
+              style="height: 170px;text-align: center;">
+              <h3>Lĩnh Vực</h3>
+            </div>
+            <div class="d-xl-flex justify-content-xl-center align-items-xl-center">
+              <div style="box-shadow: 0px 0px 7px rgba(168,176,183,0.64);width: 100%;background: #ffffff;">
+                <div class="d-xl-flex justify-content-xl-center" style="padding: 5px;"><button class="btn btn-primary"
+                    type="button" style="width: 100%;">Tất cả các lĩnh vực</button></div>
+                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="padding: 5px;"><button
+                    class="btn btn-primary" type="button" style="width: 100%;">Công tác sinh viên</button></div>
+                <div class="d-xl-flex justify-content-xl-center" style="padding: 5px;"><button class="btn btn-primary"
+                    type="button" style="width: 100%;">Đào tạo</button></div>
+                <div class="d-xl-flex justify-content-xl-center" style="margin: 0px;padding: 5px;"><button
+                    class="btn btn-primary" type="button" style="width: 100%;">Cỏ sở vật chất</button></div>
+                <div class="d-xl-flex justify-content-xl-center" style="padding: 5px;"><button class="btn btn-primary"
+                    type="button" style="width: 100%;">Tài chính</button></div>
+                <div class="d-xl-flex justify-content-xl-center" style="padding: 5px;"><button class="btn btn-primary"
+                    type="button" style="width: 100%;">Y tế</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-xl-12 col-sm-12" data-aos="fade-left">
+        <div class="bootstrap_datatables">
+          <div class="container-fluid py-5">
+            <header class="text-center text-black">
+              <h3 class="">Danh sách biểu mẫu</h3>
+            </header>
+            <div class="row py-5">
+              <div class="col-lg-12 mx-auto">
+                <div class="card rounded shadow border-0">
+                  <div class="card-body p-5 bg-white rounded">
+                    <div class="table-responsive">
+                      <table id="list-request" style="width:100%" class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Loại Biểu Mẫu</th>
+                            <th>Phòng Xử Lý</th>
+                            <th>Tải Xuống</th>
+                          </tr>
+                        </thead>
+                        <tbody class="list-request">
+                       
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="color: #6DBC2F;background: #6DBC2F;border-color: #6DBC2F;margin: 0px;">
+      <div class="col col-12" style="height: 100%;padding: 0px;color: #6DBC2F;">
+        <div class="d-xl-flex justify-content-xl-center align-items-xl-end" style="height: 50%;background: #6DBC2F;">
+          <h5 class="d-xl-flex align-items-xl-end" style="color: var(--light);"><br><strong>ĐẠI HỌC TÀI NGUYÊN VÀ MÔI
+              TRƯỜNG HÀ NỘI</strong><br><br></h5>
+        </div>
+        <div class="row" style="margin: 0px;height: 50%;">
+          <div class="col d-xl-flex justify-content-xl-center" style="padding: 0px;height: 100%;">
+            <p style="margin: 0px;color: var(--white);height: 100%;"><br>Địa chỉ: Số 41A đường Phú Diễn, Q. Bắc Từ Liêm,
+              TP. Hà Nội<br>Điện thoại: 0902 130 130&nbsp;|&nbsp;Email:&nbsp;<a
+                href="mailto:DHTNMT@hunre.edu.vn">DHTNMT@hunre.edu.vn</a><br><br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" role="dialog" tabindex="-1" id="form-login">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập</h4><button type="button" class="close" data-dismiss="modal"
+            aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="height: 50px;"><input
+                class="form-control" type="text" placeholder="Email" name="email"></div>
+            <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="height: 50px;"><input
+                class="form-control" type="password" placeholder="Mật khẩu" name="password"></div>
+            <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="height: 50px;"><button
+                class="btn btn-primary btn-login-submit" type="submit" style="background: #6DBC2F;">Đăng Nhập</button></div>
+            <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="height: 50px;"><a
+                href="#">Quên mật khẩu?</a></div>
+          </form>
+        </div>
+        <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+  <div role="dialog" tabindex="-1" class="modal fade show" id="form-change-password" style="display: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Thông tin người dùng</h4><button type="button" class="close" data-dismiss="modal"
+            aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+
+          </iframe>
+          <div class="form-group">
+            <label for="email">Mã người dùng:</label>
+            <input type="text" class="form-control" id="email" readonly>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Tên người dùng:</label>
+            <input type="tel" class="form-control" id="pwd" readonly>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Email:</label>
+            <input type="email" class="form-control" id="pwd">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Mật khẩu mới:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Xác nhận mật khẩu mới:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Mật khẩu cũ:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+        </div>
+        <div class="modal-footer"><button class="btn btn-primary back_hunre" type="button">Cập nhật</button><button
+            class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="toast" data-autohide="false" style="z-index: 100;position:absolute;right:0;bottom: 0;">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Thông báo </strong>
+      <small class="text-muted"></small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+      Gửi yêu cầu thành công! Kiểm tra mail của bạn.
+    </div>
+  </div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/bs-init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="http://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+  <script src="assets/js/student/componets.js"></script>
+  <script src="assets/js/student/controller.js"></script>
+  <script src="assets/js/student/view.js"></script>
+  <script src="assets/js/Bootstrap-DataTables.js"></script>
+
+</body>
+
+</html>
