@@ -4,7 +4,7 @@ require "../model/PHPMailer/src/Exception.php";
 require  "../model/PHPMailer/src/SMTP.php";
 
 $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-// $nguoinhan = $_REQUEST["nguoinhan"];
+$nguoinhan = $_REQUEST["nguoinhan"];
 $noidung = $_REQUEST["noidung"];
 try {
     $mail->isSMTP();  
@@ -19,7 +19,7 @@ try {
     $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
     $mail->Port = 465;  // port to connect to                
     $mail->setFrom($nguoigui, $tennguoigui ); 
-    $to = "dragonlienha@gmail.com";
+    $to = $nguoinhan;
     $to_name = "Tên người nhận";
     
     $mail->addAddress($to, $to_name); //mail và tên người nhận  

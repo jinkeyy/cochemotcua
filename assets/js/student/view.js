@@ -89,6 +89,7 @@ view.setScreenNotLogged = () => {
                 if (userData[0].id) {
                     sessionStorage.setItem('tenUser', userData[0].tenUser);
                     sessionStorage.setItem('id', userData[0].id);
+                    sessionStorage.setItem('email', userData[0].email);
                     view.setScreenLogged(userData[0]);
                     $('#form-login').modal('hide');
                     document.querySelector(".toast-body").innerHTML = `Đăng nhập thành công xin chào ${userData[0].tenUser}!`
@@ -117,6 +118,7 @@ if (sessionStorage.getItem('tenUser')) {
     const userData = {
         id: sessionStorage.getItem('id'),
         tenUser:sessionStorage.getItem('tenUser'),
+        email:sessionStorage.getItem("email")
     }
     view.setScreenLogged(userData)
 }
@@ -157,7 +159,8 @@ view.sendRequet = ()=>{
                         view.setScreen("main",component.mainSudent)
                         controller.showListRequest()
                         let noidung= {
-                            noidung:"Yêu cầu "+request.tenYeuCau+" của bạn của bạn đã được gửi đi <br> Hãy đợi cho đến khi có thông bảo mới <br> Nếu có vấn đề xin liên hệ:......"
+                            noidung:"Yêu cầu "+request.tenYeuCau+" của bạn của bạn đã được gửi đi <br> Hãy đợi cho đến khi có thông bảo mới <br> Nếu có vấn đề xin liên hệ:......",
+                            nguoinhan:sessionStorage.getItem("email")
                         }
                         $.ajax({
                             type: "POST",

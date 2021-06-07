@@ -9,7 +9,7 @@
         if(mysqli_num_rows($result) == 1){
             $r = mysqli_fetch_array($result);
             if($r["quyen"]=="Sinh Viên"){
-                array_push($a,array("id" => $r["id"] ,"tenUser" => $r["tenUser"],"notification" => "Đăng nhập thành công"));
+                array_push($a,array("id" => $r["id"] ,"tenUser" => $r["tenUser"],"email" => $r["email"],"notification" => "Đăng nhập thành công"));
                 echo json_encode($a,JSON_UNESCAPED_UNICODE);
             }
         }else{

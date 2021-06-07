@@ -116,7 +116,8 @@ controller.getListRequestById = (id,type)=>{
                             list[0].gcCBMC = list[0].ghiChuCBMC
                             controller.UpdateTrangThai(list[0])
                             let noidung = {
-                                noidung:"Đơn của bạn đã hoàn thành<br>Thời gian nhận "+list[0].tgHoanThanh+" tại phòng: "+list[0].tenPhongBan+"<br>Mọi thắc mắc xin liên hệ"
+                                noidung:"Đơn của bạn đã hoàn thành<br>Thời gian nhận "+list[0].tgHoanThanh+" tại phòng: "+list[0].tenPhongBan+"<br>Mọi thắc mắc xin liên hệ",
+                                nguoinhan:list[0].email
                             }
                             controller.mail(noidung)
                         }
@@ -138,7 +139,8 @@ controller.XuLy = (data)=>{
             data.gcCBMC = ghiChuCBMC
             controller.UpdateTrangThai(data)
             let noidung = {
-                noidung:"Đơn của bạn đã bị HỦY<br>Lý do: "+ghiChuCBMC+"<br>Mọi thắc mắc xin liên hệ"
+                noidung:"Đơn của bạn đã bị HỦY<br>Lý do: "+ghiChuCBMC+"<br>Mọi thắc mắc xin liên hệ",
+                nguoinhan:data.email
             }
             console.log(noidung.noidung)
             controller.mail(noidung)
