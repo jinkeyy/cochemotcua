@@ -270,3 +270,49 @@ controller.mail =(noidung)=>{
         }
     });
 }
+controller.addFile = ()=>{
+    const tenFile = document.getElementsByName("ten-file")[0].value
+    const file = document.getElementsByName("file-tai-len")[0].files[0]
+    const ghiChuFile = document.getElementsByName("ghi-chu-file")[0].value
+    const idPhongBan = document.getElementsByName("combo-phong-ban")[0].value
+
+    if(tenFile != "" && idPhongBan!="" && file != undefined ){
+        const temp = file.name.split(".")
+        const typeFile =temp[temp.length-1]
+        if(  typeFile == "pdf" || typeFile =="doc" ||typeFile =="docx"){
+            var storage = firebase.storage();
+            var storageRef = firebase.storage().ref();
+            var uploadTask = storageRef.child('files/'+tenFile+"_"+file.name).put(file)
+            firebase.storage().ref().child('files/'+tenFile+"_"+file.name).getDownloadURL()
+            .then((url) => {
+                let data ={
+                    tenFile: tenFile,
+                    ghiChuFile: ghiChuFile,
+                    idPhongBan:idPhongBan,
+                    urlFile:url,
+                }
+                console.log(data)
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:80/DemoCCMC/model/addFile.php',
+                    data: data,
+                    success: (data) => {
+                        if(JSON.parse(data)[0].notification == "true"){
+                            alert("thành công");
+                            $('#form-them-flie').modal('hide');
+                        }else{
+                            alert("thất bại")
+                        }
+                    }
+                });
+            }) .catch((error) => {
+                alert("lỗi "+error)
+            });
+
+        }else{
+            alert("Hệ thống chỉ nhận file định dạng PDF,DOC,DOCX")
+        }
+    }else{
+        alert("chưa điền đủ thông tin")
+    }
+}

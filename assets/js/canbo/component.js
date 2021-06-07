@@ -6,7 +6,11 @@ components.infoUser = (dataUser)=>{
     data-toggle="dropdown" href="#">${dataUser.tenUser}( ${dataUser.quyen})</a>
     <div class="dropdown-menu"><a class="dropdown-item" href="#">Thông tin tài khoản</a><a
         data-toggle="modal" data-target="#form-change-password" class="dropdown-item"
-        href="#">Đổi mật khẩu</a><a class="dropdown-item btn-logout" href="#">Đăng Xuất</a></div>
+        href="#">Đổi mật khẩu</a>
+        <a
+        data-toggle="modal" data-target="#form-them-user" class="dropdown-item"
+        href="#">Tạo tài khoản</a>
+        <a class="dropdown-item " href="#"   data-toggle="modal" data-target='#form-them-flie'>Thêm biểu mẫu</a><a class="dropdown-item btn-logout" href="#">Đăng Xuất</a></div>
     </li>`
 }
 components.mainLogin = `<div style="width:100%; margin: 0px;background: rgba(108,117,125,0.08);display:flex;justify-content: center;
@@ -35,7 +39,7 @@ components.itemRequest = (data,quaHan = false)=>{
     let date = tgGui.getHours()+":"+tgGui.getMinutes()+"p - "+tgGui.getDate()+"/"+(tgGui.getMonth()*1+1)+"/"+tgGui.getFullYear()
     
     let tgDuKien = new Date(tgGui.setDate(tgGui.getDate() + 2))
-
+ 
 
     DateFiff = (d1, d2)=>{
         let t2 = d2.getTime();

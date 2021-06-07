@@ -114,7 +114,9 @@ view.screenCBMC = (dataUser)=>{
   view.setScreen("info-user",components.infoUser(dataUser))
   view.setScreen("main-canbo",components.mainCBMC)
   view.screenChart()
-
+  document.querySelector(".btn-them-file").addEventListener("click",()=>{
+    controller.addFile()
+  })
   let listItemMenu = document.getElementsByClassName("item-menu")
   resetActiveItem = ()=>{
       for(let item of listItemMenu){
@@ -166,7 +168,7 @@ view.getListRequestCBPB = (get)=>{
       success: (data) => {
           const list=  JSON.parse(data);
           if(list[0].notification){
-              view.setScreen("list-request","Không có yêu cầu")
+              view.setScreen("list-yeu-cau-pb",`<tr><td colspan='5'>Không có yêu cầu nào</td></tr>`)
           }else{
               let htmlList = "";
               for(let item of list){
