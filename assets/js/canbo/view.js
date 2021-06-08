@@ -117,6 +117,10 @@ view.screenCBMC = (dataUser)=>{
   document.querySelector(".btn-them-file").addEventListener("click",()=>{
     controller.addFile()
   })
+  document.querySelector(".btn-them-user").addEventListener("click",(e)=>{
+    e.preventDefault()
+    controller.addUser()
+  })
   let listItemMenu = document.getElementsByClassName("item-menu")
   resetActiveItem = ()=>{
       for(let item of listItemMenu){
@@ -293,6 +297,7 @@ view.screenCBPB =  (dataUser)=>{
   view.setScreen("info-user",components.infoUser(dataUser))
   view.setScreen("main-canbo",components.mainCBPB())
   view.setScreen("title-room","Phòng "+sessionStorage.getItem('quyen'))
+  document.querySelector(".tao-tai-khoan").style = "display:none"
   console.log(sessionStorage.getItem('quyen'))
   switch(sessionStorage.getItem('quyen')){
     case "Công tác sinh viên":

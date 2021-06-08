@@ -318,3 +318,50 @@ controller.addFile = ()=>{
         alert("chưa điền đủ thông tin")
     }
 }
+controller.addUser = ()=>{
+    const maUser = document.getElementsByName("ma-user")[0].value
+    const tenUser = document.getElementsByName("ten-user")[0].value
+    const emailUser = document.getElementsByName("emai-user")[0].value
+    const quyenUser = document.getElementsByName("combo-user")[0].value
+    const matKhauUser = document.getElementsByName("password-user")[0].value
+    const rmatKhauUser = document.getElementsByName("rpassword-user")[0].value
+    if(maUser==""||tenUser==""||emailUser=="",matKhauUser==""||quyenUser==""||rmatKhauUser==""){
+        alert("Chưa điền đủ thông tin")
+    }else{
+        if(matKhauUser==rmatKhauUser){
+            function validateEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if(validateEmail(emailUser)){
+                let data = {
+                    maUser:maUser,
+                    tenUser:tenUser,
+                    emailUser:emailUser,
+                    quyenUser:quyenUser,
+                    matKhauUser:matKhauUser,
+                }
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:80/DemoCCMC/model/addUser.php',
+                    data: data,
+                    success: (data) => {
+                        if(JSON.parse(data)[0].notification == "true"){
+                            alert("thành công");
+                            $('#form-them-user').modal('hide');
+                        }else if(JSON.parse(data)[0].notification == "trung"){
+                            alert("Mã đã tồn tại")
+                        }else{
+                            alert("thất bại")
+                        }
+                    }
+                });
+            }else{
+                alert("Email không đúng định dạng")
+            }
+
+        }else{
+            alert("Mật khẩu không trung nhau")
+        }
+    }
+}

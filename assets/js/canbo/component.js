@@ -8,7 +8,7 @@ components.infoUser = (dataUser)=>{
         data-toggle="modal" data-target="#form-change-password" class="dropdown-item"
         href="#">Đổi mật khẩu</a>
         <a
-        data-toggle="modal" data-target="#form-them-user" class="dropdown-item"
+        data-toggle="modal" data-target="#form-them-user" class="dropdown-item tao-tai-khoan"
         href="#">Tạo tài khoản</a>
         <a class="dropdown-item " href="#"   data-toggle="modal" data-target='#form-them-flie'>Thêm biểu mẫu</a><a class="dropdown-item btn-logout" href="#">Đăng Xuất</a></div>
     </li>`
@@ -38,7 +38,7 @@ components.itemRequest = (data,quaHan = false)=>{
     let tgGui = new Date(Number(data.tgGui));
     let date = tgGui.getHours()+":"+tgGui.getMinutes()+"p - "+tgGui.getDate()+"/"+(tgGui.getMonth()*1+1)+"/"+tgGui.getFullYear()
     
-    let tgDuKien = new Date(tgGui.setDate(tgGui.getDate() + 2))
+    let tgDuKien = new Date(tgGui.setDate(tgGui.getDate() + 5))
  
 
     DateFiff = (d1, d2)=>{
