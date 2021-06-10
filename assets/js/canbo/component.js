@@ -156,11 +156,11 @@ components.mainCBMC = `<div class="col-xl-2" style="border-right: 2px solid var(
                 <p><strong>Thống kê:</strong></p>
             </div>
             <div style="height: 100px;box-shadow: 0px 0px 5px rgba(108,117,125,0.4);margin: 15px 0px;">
-                <h1 class="d-flex justify-content-center align-items-center yeu-cau-tong" style="color: var(--purple);">40</h1>
+                <h1 class="d-flex justify-content-center align-items-center yeu-cau-tong" style="color: var(--purple);">NULL</h1>
                 <p class="d-flex justify-content-center">YÊU CẦU</p>
             </div>
             <div style="height: 100px;box-shadow: 0px 0px 5px rgba(108,117,125,0.4);margin: 15px 0px;">
-                <h1 class="d-flex justify-content-center align-items-center yeu-cau-xu-ly" style="color: var(--blue);">20</h1>
+                <h1 class="d-flex justify-content-center align-items-center yeu-cau-xu-ly" style="color: var(--blue);">NULL</h1>
                 <p class="d-flex justify-content-center">YÊU CẦU CẦN XỶ LÝ</p>
             </div>
             

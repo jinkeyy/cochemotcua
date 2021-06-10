@@ -350,7 +350,7 @@ controller.addUser = ()=>{
                             alert("thành công");
                             $('#form-them-user').modal('hide');
                         }else if(JSON.parse(data)[0].notification == "trung"){
-                            alert("Mã đã tồn tại")
+                            alert("Mã hoặc Email đã tồn tại")
                         }else{
                             alert("thất bại")
                         }
